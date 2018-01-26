@@ -43,7 +43,6 @@ client.on('message', msg => {
     if (command === 'help') {
       msg.channel.send('O(========>BANK<========)O');
       msg.channel.send('Type !getalt (Free Gold!)');
-      msg.channel.send('======================');
     }
     else if (command === 'invite') return msg.channel.send(process.env.INVITE);
 });
