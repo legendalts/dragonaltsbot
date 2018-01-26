@@ -53,7 +53,7 @@ client.on('message', msg => {
     const args = msg.content.split(' ').slice(1).join(' ');
     if (command === 'getalt') {
 	    
-	    if (msg.channel != "#getalt") {
+	    if (msg.channel != 'getalt') {
 		    msg.author.send("Please use !getalt in the #getalt channel of our server.");
 	    } else {
 		
