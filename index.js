@@ -55,7 +55,7 @@ client.on('message', msg => {
 	    
 	    if (msg.channel != "#getalt") {
 		    msg.author.send("Please use !getalt in the #getalt channel of our server.");
-	    }
+	    } else {
 		
 		if (talkedRecently.has(msg.author.id)) {
 				msg.author.send("Please wait a minute before getting another alt.");
@@ -69,7 +69,9 @@ client.on('message', msg => {
 			  // Removes the user from the set after 2.5 seconds
 			  talkedRecently.delete(msg.author.id);
 			}, 60000);
-		}		
+		}
+		    
+	    }
 	
     }
     else if (command === 'invite') return msg.channel.send(process.env.INVITE);
