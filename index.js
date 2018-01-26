@@ -52,8 +52,9 @@ client.on('message', msg => {
     const command = msg.content.split(' ')[0].substr(process.env.PREFIX.length);
     const args = msg.content.split(' ').slice(1).join(' ');
     if (command === 'getalt') {
-		
-		if (talkedRecently.has(msg.author.id)) {
+	    
+	    if(msg.member.voiceChannel == "getalt"){
+	      if (talkedRecently.has(msg.author.id)) {
 				msg.author.send("Please wait a minute before getting another alt.");
 		} else {
 			msg.channel.send("Check your PM " + msg.author);
@@ -66,6 +67,9 @@ client.on('message', msg => {
 			  talkedRecently.delete(msg.author.id);
 			}, 60000);
 		}
+	    } else {
+	      msg.author.send('Please use !getalt in the #getalt channel of our server.');
+	    }
 	
     }
     else if (command === 'invite') return msg.channel.send(process.env.INVITE);
