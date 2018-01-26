@@ -52,13 +52,16 @@ client.on('message', msg => {
     const command = msg.content.split(' ')[0].substr(process.env.PREFIX.length);
     const args = msg.content.split(' ').slice(1).join(' ');
     if (command === 'getalt') {
+	    
+	    if (msg.channel != "#getalt") {
+		    msg.author.send("Please use !getalt in the #getalt channel of our server.");
+	    }
 		
 		if (talkedRecently.has(msg.author.id)) {
 				msg.author.send("Please wait a minute before getting another alt.");
 		} else {
 			msg.channel.send("Check your PM " + msg.author);
-			msg.author.send(':arrow_down: :regional_indicator_a: :regional_indicator_l: :regional_indicator_t: :arrow_down: \n' + getRandomLine() + '\n :regional_indicator_e: :regional_indicator_n: :regional_indicator_j: :regional_indicator_o: :regional_indicator_y: \n :heart_decoration: :heart: :heart_decoration: :heart: :heart_decoration:');
-			msg.channel.send("test: " + msg.channel);
+			msg.author.send(':arrow_down: :regional_indicator_a: :regional_indicator_l: :regional_indicator_t: :arrow_down: \n' + getRandomLine() + '\n:regional_indicator_e: :regional_indicator_n: :regional_indicator_j: :regional_indicator_o: :regional_indicator_y: \n:heart_decoration: :heart: :heart_decoration: :heart: :heart_decoration:');
 			
 			// Adds the user to the set so that they can't talk for 2.5 seconds
 			talkedRecently.add(msg.author.id);
