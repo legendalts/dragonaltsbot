@@ -53,7 +53,7 @@ client.on('message', msg => {
     const args = msg.content.split(' ').slice(1).join(' ');
     if (command === 'getalt') {
 	    
-	    if(msg.member.voiceChannel == "getalt"){
+	    if(msg.author.voiceChannel == "getalt"){
 	      if (talkedRecently.has(msg.author.id)) {
 				msg.author.send("Please wait a minute before getting another alt.");
 		} else {
