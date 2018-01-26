@@ -1,2 +1,2 @@
-# Bank Bot
+# DragonAlts Bot
 By Mario Latif
