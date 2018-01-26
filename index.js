@@ -41,8 +41,8 @@ client.on('message', msg => {
     const command = msg.content.split(' ')[0].substr(process.env.PREFIX.length);
     const args = msg.content.split(' ').slice(1).join(' ');
     if (command === 'help') {
-      msg.channel.send('O(========>BANK<========)O');
-      msg.channel.send('Type !getalt (Free Gold!)');
+      msg.channel.send('O(========>DragonAlts<========)O');
+      msg.channel.send('Type !getalt');
     }
     else if (command === 'invite') return msg.channel.send(process.env.INVITE);
 });
